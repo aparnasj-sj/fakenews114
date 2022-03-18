@@ -1,12 +1,9 @@
 from flask import Flask,render_template,flash,request,url_for,redirect,session
 import numpy as np
 import pandas as pd
-import re
-import os
 import tensorflow as tf
 from numpy import array
-from tensorflow.keras.datasets import imdb
-from tensorflow.keras.preprocessing import sequence
+
 from tensorflow.keras.models import load_model
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.preprocessing.text import Tokenizer
