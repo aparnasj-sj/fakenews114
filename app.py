@@ -89,7 +89,7 @@ def getFromSubs(subreddits, limit):
 
     pdf={'url':url_array,'title':title_array,'sentiment':sen_array,'probability':prob_array,'text':text_array}
     pdf=pd.DataFrame(pdf)
-    datatoexcel = pd.ExcelWriter('E:/flaskProjects-1/fake_news_1/NewsReport.xlsx')
+    datatoexcel = pd.ExcelWriter('NewsReport.xlsx')
   
 # write DataFrame to excel
     pdf.to_excel(datatoexcel)
