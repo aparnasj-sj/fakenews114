@@ -21,7 +21,7 @@ def main(limit=1, subs=config.subreddits, upvotes=config.min_upvotes):
         json_list = []
         #while(True):
         submission = reddit.subreddit(subs).hot(limit=limit)
-        print(submission)
+        #print(submission)
         for post in submission:
             json_dict = { "title":post.title,
                             "url_to_scrape" : post.url,

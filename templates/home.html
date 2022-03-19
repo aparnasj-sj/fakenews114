@@ -29,12 +29,14 @@
   <h2>Enter Text Here</h2>-->
   <div class = "input-group">
              <span class = "input-group-addon">Enter Text Here</span>
-             <form action="/sentiment_analysis_prediction" method="post" enctype="multipart/form-data">
-             <input name = "text" class = "form-control" placeholder = "Text">
+             <form action="/prediction" method="post" enctype="multipart/form-data">
+             <input name = "text" class = "form-control" placeholder = "Reddit name ">
+             <input type="number" name = "limit" class = "form-control" placeholder = "Limit">
+            
              <input type="submit">
              </form>
   </div>
-
+ <!--
   <div class="col-md-3">
            <h1>Probability</h1>
            <div class="alert alert-primary" role="alert">
@@ -43,5 +45,6 @@
                 {% endif %}
            </div>
    </div>
+  -->
 
 </body></html>

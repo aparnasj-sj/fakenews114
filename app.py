@@ -21,6 +21,7 @@ from bs4 import BeautifulSoup
 import requests,json ,uuid,pathlib
 from newspaper import Article
 import sentiment
+from flask import send_file
 ################################
 app = Flask(__name__)
 
@@ -37,8 +38,14 @@ def init():
 
 @app.route("/")
 def home():
-    return jsonify(get.main())
-
+    #return jsonify(get.main())
+    return render_template("home.html")
+@app.route('/prediction',methods = ['POST','GET'])
+def prediction():
+      if request.method == 'POST':
+        rname=request.form.get('text')
+        rlimit=request.form.get('limit')
+        return redirect(url_for('getFromSubs',subreddits=rname,limit=rlimit))
 #fetch memes from default list of subreddits
 @app.route("/<int:limit>")
 def getMore(limit):
@@ -48,7 +55,7 @@ def getMore(limit):
 @app.route("/<subreddits>/<int:limit>")
 def getFromSubs(subreddits, limit):
     post_json_array=get.main(limit=limit, subs = subreddits)['objects']
-    print(post_json_array)
+    #print(post_json_array)
     reply=[]
     url_array=[]
     title_array=[]
@@ -95,8 +102,13 @@ def getFromSubs(subreddits, limit):
     pdf.to_excel(datatoexcel)
   
 # save the excel
-    datatoexcel.save()  
-    return jsonify(reply)
+    datatoexcel.save() 
+    return send_file("NewsReport.xlsx",
+                     mimetype='text/xlsx',
+                     attachment_filename="output.xlsx",
+                     as_attachment=True,
+                     cache_timeout=-1) 
+    #return jsonify(reply)
     
 
 #fetch memes using subreddit, minimum upvotes and limit
