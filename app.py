@@ -63,7 +63,7 @@ def getFromSubs(subreddits, limit):
     prob_array=[]
     text_array=[]
     for news_url in post_json_array:
-        html_document = requests.get(news_url['url_to_scrape']).content
+        #html_document = requests.get(news_url['url_to_scrape']).content
         try:
             article = Article(news_url['url_to_scrape'])
             article.download()
@@ -86,7 +86,10 @@ def getFromSubs(subreddits, limit):
             title_array.append(news_url['title'])
             sen_array.append(ans_array['res'][0]['sentiment'])
             prob_array.append(ans_array['res'][1]['probability'])
-            text_array.append(data)
+            if(data):
+                text_array.append(data)
+            else:
+                text_array.append('Not able to load data ')
         except:
             url_array.append(news_url['url_to_scrape'])
             title_array.append(news_url['title'])
@@ -103,12 +106,15 @@ def getFromSubs(subreddits, limit):
   
 # save the excel
     datatoexcel.save() 
-    return send_file("NewsReport.xlsx",
-                     mimetype='text/xlsx',
-                     attachment_filename="output.xlsx",
-                     as_attachment=True,
-                     cache_timeout=-1) 
+    try:
+        return send_file("NewsReport.xlsx",
+                         mimetype='text/xlsx',
+                         attachment_filename="output.xlsx",
+                         as_attachment=True,
+                         cache_timeout=-1) 
     #return jsonify(reply)
+    except:
+        return j('Not able to send file to client ! :( ')
     
 
 #fetch memes using subreddit, minimum upvotes and limit
@@ -118,4 +124,6 @@ def getWithUpvotes(subreddits, limit, upvotes):
 
 if __name__ == "__main__":
     init()
-    app.run(debug=config.debug)
+    #app.run(debug=config.debug)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

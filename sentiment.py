@@ -6,7 +6,6 @@ import re
 import os
 import tensorflow as tf
 from numpy import array
-from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.models import load_model
 from tensorflow.keras.models import Sequential
@@ -43,7 +42,7 @@ def main(text_p):
         
         Sentiment = ''
         max_review_length = 1000
-        word_to_id = imdb.get_word_index()
+        #word_to_id = imdb.get_word_index()
         #strip_special_chars = re.compile("[A-Za-z0-9 ]+")
         #text = text.lower().replace("<br />"," ")
         #text = re.sub(strip_special_chars,"",text.lower())
