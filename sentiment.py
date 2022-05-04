@@ -61,7 +61,7 @@ def main(text_p):
         #t=post.title
         text=''
         text+= " ".join(filtered_sentence)
-        #print(text,'filetred text')
+        print(text,'filetred text')
         #words = text.split()
         #tokenizer=Tokenizer()
         #with open('tokenizer.pickle', 'rb') as handle:
