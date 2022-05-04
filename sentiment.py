@@ -15,6 +15,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense,Embedding,LSTM,Conv1D ,MaxPool1D
 import pickle
 import sys
+from spacy.lang.en import English
+from spacy.lang.en.stop_words import STOP_WORDS
 
 '''
 #from tensorflow.python.ops.math_ops import reduce_prod
@@ -37,6 +39,8 @@ def home():
 '''
 def main(text_p):
     #if request.method='POST':
+    nlp = English()
+
     if True:
         text = text_p
         
@@ -47,11 +51,17 @@ def main(text_p):
         #text = text.lower().replace("<br />"," ")
         #text = re.sub(strip_special_chars,"",text.lower())
         text=text.split()
-        print(text, file=sys.stderr)
+        #print(text, file=sys.stderr)
         tt=text[1:]
+        filtered_sentence =[] 
+        for word in tt:
+             lexeme = nlp.vocab[word]
+             if lexeme.is_stop == False:
+                  filtered_sentence.append(word) 
         #t=post.title
         text=''
-        text+= " ".join(tt)
+        text+= " ".join(filtered_sentence)
+        #print(text,'filetred text')
         #words = text.split()
         #tokenizer=Tokenizer()
         #with open('tokenizer.pickle', 'rb') as handle:
@@ -68,11 +78,14 @@ def main(text_p):
         model = load_model('New_Model.h5',compile=False)
         y=model.predict(l)
         probability=y
-
+        b=round(y[0][0],5)
+        k=0.01358
         if(y[0][0]>0.5):
             Sentiment='Real'
+        elif(b>=k and b<0.011359):
+            Sentiment='XX'
         else:
-            Sentiment='fake '
+            Sentiment='Fake'
         #return render_template('home.html',text=text,sentiment = Sentiment,probability = probability)
         json_list = []
         json_list.append({"sentiment":Sentiment})
@@ -80,6 +93,6 @@ def main(text_p):
 
         return {"res":json_list}
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #init()
-    app.run()
+   # app.run()

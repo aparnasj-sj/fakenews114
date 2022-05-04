@@ -1,50 +1,167 @@
 <!DOCTYPE html><html lang='en' class=''>
 <head>
+  <meta http-equiv="refresh" content="100">
   <!--<script src="https://kit.fontawesome.com/f75621122b.js"></script>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styling.css')}}">
+<!-- <<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styling.css')}}">> -->
   <script src="https://kit.fontawesome.com/f75621122b.js"></script>
   <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 
   <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/tobewan77/pen/xrwGdy?limit=all&page=4&q=nav+tabs" />
 
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel='stylesheet prefetch' href='https://www.jqueryscript.net/demo/jQuery-Plugin-To-Create-Responsive-Scrolling-Bootstrap-Tabs/jquery.scrolling-tabs.css'><link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'><link rel='stylesheet prefetch' href='https://www.bts.com/fonts/digital-icons/style.css'>
-<link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='styling.css')}}'>
+<!--<link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='styling.css')}}'> -->
+<!--<link rel="stylesheet" href="sample12.css"> -->
 
-<style class="cp-pen-styles">/*digital colors */
+    <link rel="stylesheet"  type="text/css" href="{{url_for('.static', filename='sample12.css')}}">
+
+<style class="cp-pen-styles">
+
+</style>
+<style>
+body {
+  background-image:url('../static/images/reddit_background1.jpg');
+  color: #FFFFFF;
+  background-repeat: no-repeat;
+  
+  background-attachment: fixed;
+  background-size: cover;
+}
 </style>
 
 </head>
-<body>
-  <h1>Fake News Detection</h1>
-  <br />
-  <br />
-  <!-- <span class = "input-group-addon">Enter Text Here</span
-  <h2>Enter Text Here</h2>-->
-  <div class = "input-group">
-             <span class = "input-group-addon">Enter Text Here</span>
-             <form action="/prediction" method="post" enctype="multipart/form-data">
-             <input name = "text" class = "form-control" placeholder = "Reddit name ">
-             <input type="number" name = "limit" class = "form-control" placeholder = "Limit">
-            
-             <input type="submit">
-             </form>
-  </div>
- <!--
-  <div class="col-md-3">
-           <h1>Probability</h1>
-           <div class="alert alert-primary" role="alert">
-             {% if probability %}
-               {{ probability }}
-                {% endif %}
-           </div>
-   </div>
-  -->
+  <body>
+    
+      
+  
+    
+    <div class="vertical-menu" >
+      <a href="#" class ="active"></a>
+    <u class="reddit_links">
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_general_content"color="#96944e" >General Content</a></u>
+      <a href="https://www.reddit.com/r/UpliftingNews/">UpliftingNews</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_images#">Images</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_Videos">Videos</a>
+      <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_discussion" color="#96944e">Discussion</a></u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_general" >General</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_advice">Advice</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_ama">AMA</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_games">Games</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_question.2Fanswer">Question/Answer</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_stories" >Stories</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_support">Support</a>
+      <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_educational" color="#96944e">Educational</a></u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_anthropology">Anthropology</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_art">Art</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_computer_science.2Fengineering">Computer Science/Engineering</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_economics" >Economics</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_environment">Environment</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_history">History</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_language">Language</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_law">Law</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_math">Math</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_medicine" >Medicine</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_science">Science</a>
+      <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_entertainment"color="#96944e">Entertainment</a></u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_general3">General</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_anime.2Fmanga">Anime/Manga</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_books.2Fwriting">Books/Writing</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_celebrities" >celebrities</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_games">Games</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_genres">Genres</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_internet.2Fapps">Internet/Apps</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_movies">Movies</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_musics">Musics</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_sports" >Sports</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_tv">TV</a>
+       <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_hobbies.2Foccupations"color="#96944e">Hobbies/Occupations</a></u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_general4">General</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_aquariums">Aquariums</a>
+    <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_arts.2Fwriting">Arts/Writing</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_automotive" >Automotive</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_design">Design</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_guns.2Fcombat">Guns/Combat</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_music2">Music</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_outdoors">Outdoors</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_tech_related">Tech Related</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_travel" >Travel</a>
+      <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_lifestyle"color="#96944e">Lifestyle</a></u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_general5">General</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_communities">Communities</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_drugs">Drugs</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_exercise.2Fhealth">Exercise/Health</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_fashion.2Fbeauty" >Fashion/Beauty</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_food">Food</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_religion">Religion/Beliefs</a>
+      <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_technology"color="#96944e">Technology</a></u>
+       <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_humor"color="#96944e">Humor</a></u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_general6">General Humor</a>
+      <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_animals"color="#96944e">Animals</a></u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_birds">birds</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_mammals">Mammals</a>
+      <u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_other"color="#96944e">Other</a></u>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_conspiracy">Conspiracy</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_cringe">Cringe</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_gender" >Gender</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_geography">Geography</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_news.2Fpolitics">News/Politics</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_parodies">Parodies</a>
+      <a href="https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits/#wiki_visually_appealing">Visually Appealing</a>
+    
+    </div>
+    
+  
+    
+    <div class ="text-inside">
+      <div class ="top-heading">
+        <h1>Fake News Detector</h1>
+      </div>
+      
+      
 
-</body></html>
+      
+
+      <div class = "input-group"><div class="inside">
+                 <form action="/prediction" method="post" enctype="multipart/form-data">
+                   <label>
+                     <b>Reddit name</b>
+                  </label><br />
+                  <input name = "text" class = "form-control" placeholder = "Reddit name ">
+                  <label>
+                    <b>Limit</b>
+                 </label><br />
+                  <input type="number" name = "limit" class = "form-control" placeholder = "Limit">
+                  <br /><br />
+                  <div class="submit-btn">
+                 <input type="submit">
+                 </div>
+               </form>
+                </div>
+                
+      </div>
+     
+      
+      
+      
+
+
+     
+    </div>
+  
+  </body>
+</html>
